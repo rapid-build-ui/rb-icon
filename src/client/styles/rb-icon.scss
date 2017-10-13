@@ -1,0 +1,10 @@
+/*****************
+ * RB-ICON STYLES
+ *****************/
+// @import 'default';
+
+$default-rb-icon-size: 40px;
+
+:host {
+	font-size: var(--rb-icon-size, $default-rb-icon-size);
+}

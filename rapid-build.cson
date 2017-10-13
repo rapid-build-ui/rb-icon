@@ -1,0 +1,39 @@
+common:
+	build: server: false
+	browser: open: false, reload: false
+
+	dist:
+		client:
+			paths:
+				absolute: false
+
+	exclude:
+		default:
+			client:
+				files: true
+
+	extra:
+		copy:
+			client: [
+				'package.json'
+			]
+
+	# currently can't minify es6 javascript
+	# therefore prod build breaks - TODO: fix
+	minify:
+		html:
+			templateCache: false
+
+demo:
+	build: server: true
+	browser: open: true, reload: true
+
+	ports:
+		server: 5002
+		reload: 5003
+
+	extra:
+		copy:
+			client: [
+				'node_modules/**'
+			]
