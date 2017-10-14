@@ -29,8 +29,8 @@ demo:
 	browser: open: true, reload: true
 
 	ports:
-		server: 5002
-		reload: 5003
+		server: 5004
+		reload: 5005
 
 	extra:
 		copy:

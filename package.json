@@ -27,10 +27,10 @@
 		"url": "https://github.com/rapid-build-ui/rb-icon/issues"
 	},
 	"scripts": {
-		"npm-install-client": "cd src/client/ && yarn install",
-		"npm-install-server": "cd src/server/ && npm install",
-		"npm-install-project": "npm run npm-install-client && npm run npm-install-server",
-		"yarn-link": "cd dist/client/ && yarn link",
-		"yarn-unlink": "cd dist/client/ && yarn unlink"
+		"link": "cd dist/client/ && yarn link",
+		"unlink": "cd dist/client/ && yarn unlink",
+		"install": "npm run install-client && npm run install-server",
+		"install-client": "cd src/client/ && npm install",
+		"install-server": "cd src/server/ && npm install"
 	}
 }
