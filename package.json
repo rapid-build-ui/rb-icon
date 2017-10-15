@@ -29,8 +29,8 @@
 	"scripts": {
 		"link": "cd dist/client/ && yarn link",
 		"unlink": "cd dist/client/ && yarn unlink",
-		"install": "npm run install-client && npm run install-server",
 		"install-client": "cd src/client/ && npm install",
-		"install-server": "cd src/server/ && npm install"
+		"install-server": "cd src/server/ && npm install",
+		"setup": "npm run install-client && npm run install-server"
 	}
 }
