@@ -1,10 +1,14 @@
 /*****************
  * RB-ICON STYLES
  *****************/
-// @import 'default';
+$iconSize: 40px;
 
-$default-rb-icon-size: 40px;
+// @import '../node_modules/font-awesome/scss/font-awesome.scss';
+@import '/../../font-awesome/css/font-awesome.css';
 
 :host {
-	font-size: var(--rb-icon-size, $default-rb-icon-size);
+	font-size: var(--rb-icon-size, $iconSize);
+	i {
+		font-style: normal;
+	}
 }
