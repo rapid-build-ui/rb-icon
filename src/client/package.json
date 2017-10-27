@@ -31,6 +31,7 @@
 	"dependencies": {
 		"@polymer/polymer": "^3.0.0-pre.1",
 		"font-awesome": "^4.7.0",
-		"webfontloader": "^1.6.28"
+		"webfontloader": "^1.6.28",
+		"devicons": "1.8.0"
 	}
 }
