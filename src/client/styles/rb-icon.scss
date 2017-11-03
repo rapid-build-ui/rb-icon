@@ -1,7 +1,7 @@
 /*****************
  * RB-ICON STYLES
  *****************/
-$iconSize: 40px;
+$iconSize: inherit;
 
 // @import '../node_modules/font-awesome/scss/font-awesome.scss';
 @import '/../../font-awesome/css/font-awesome.css';
@@ -10,5 +10,22 @@ $iconSize: 40px;
 	font-size: var(--rb-icon-size, $iconSize);
 	i {
 		font-style: normal;
+
+		&[bold]{
+			font-weight: bold;
+		}
 	}
+
+	.big {
+		font-size: 2em;
+	}
+
+	.small {
+		font-size: 0.7em;
+	}
+
 }
+
+
+
+

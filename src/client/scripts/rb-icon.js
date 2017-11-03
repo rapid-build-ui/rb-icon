@@ -30,6 +30,15 @@ export class RbIcon extends PolymerElement {
 			kind:	{
 				type: String,
 				value: ''
+			},
+			size: {
+				type: String,
+				value: ''
+			},
+			bold: {
+				type: String,
+				value: ''
+
 			}
 		}
 	}
@@ -50,12 +59,17 @@ export class RbIcon extends PolymerElement {
 		}
 	}
 
+	_isBold(isBold) {
+		if (isBold)
+			return 'bold'
+	}
+
 	/* Template
 	 ***********/
 	static get template() {
 		return `
 			<link rel="stylesheet" href="[[importPath]]/styles/rb-icon.css">
-			<i class$="[[_iconKindMatched(kind)]]"></i>
+			<i class$="[[_iconKindMatched(kind)]] [[_isBold(bold)]]"></i>
 		`;
 	}
 }
