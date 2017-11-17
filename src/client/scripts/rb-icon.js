@@ -4,6 +4,7 @@
 import { Element as PolymerElement } from '../../../@polymer/polymer/polymer-element.js';
 import { DomIf as DomIf } from '../../../@polymer/polymer/lib/elements/dom-if.js';
 import '../../../webfontloader/webfontloader.js'; // web components doesn't laod fonts natively
+import template from '../views/rb-icon.html';
 
 export class RbIcon extends PolymerElement {
 	/* Lifecycle
@@ -45,7 +46,6 @@ export class RbIcon extends PolymerElement {
 
 	_iconKindMatched(kind) {
 		if (!kind) {
-			console.log('icon kind is required');
 			return '';
 		}
 		kind = kind.toLowerCase();
@@ -63,10 +63,7 @@ export class RbIcon extends PolymerElement {
 	/* Template
 	 ***********/
 	static get template() {
-		return `
-			<link rel="stylesheet" href="[[importPath]]/styles/rb-icon.css">
-			<i class$="[[_iconKindMatched(kind)]] [[size]]" bold$=[[bold]]></i>
-		`;
+		return template;
 	}
 }
 

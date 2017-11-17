@@ -8,7 +8,9 @@ $iconSize: inherit;
 @import '/../../devicons/css/devicons.css';
 :host {
 	font-size: var(--rb-icon-size, $iconSize);
+
 	i {
+		vertical-align: var(--rb-icon-vertical-align, baseline);
 		font-style: normal;
 
 		&[bold]{
