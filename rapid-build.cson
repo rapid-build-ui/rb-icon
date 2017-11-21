@@ -24,7 +24,7 @@ common:
 		html:
 			templateCache: false
 
-	compile:
+	inline:
 		jsHtmlImports:
 			client:
 				enable: true
