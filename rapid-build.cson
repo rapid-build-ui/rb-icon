@@ -18,16 +18,19 @@ common:
 				'package.json'
 			]
 
-	# currently can't minify es6 javascript
-	# therefore prod build breaks - TODO: fix
-	minify:
-		html:
-			templateCache: false
-
 	inline:
 		jsHtmlImports:
 			client:
 				enable: true
+
+	minify:
+		cacheBust: false
+		html:
+			templateCache: false
+		client:
+			js:
+				es6: true
+				fileName: 'rb-icon.js'
 
 demo:
 	build: server: true
