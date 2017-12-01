@@ -37,8 +37,8 @@ export class RbIcon extends PolymerElement {
 				value: ''
 			},
 			bold: {
-				type: String,
-				value: ''
+				type: Boolean,
+				value: false
 
 			}
 		}
