@@ -1,33 +1,7 @@
 /*****************
  * RB-ICON STYLES
  *****************/
-$iconSize: inherit;
 
-// @import '../node_modules/font-awesome/scss/font-awesome.scss';
-@import '/../../font-awesome/css/font-awesome.css';
-@import '/../../devicons/css/devicons.css';
 :host {
-	font-size: var(--rb-icon-size, $iconSize);
-
-	i {
-		vertical-align: var(--rb-icon-vertical-align, baseline);
-		font-style: normal;
-
-		&[bold]{
-			font-weight: bold;
-		}
-	}
-
-	.big {
-		font-size: 2em;
-	}
-
-	.small {
-		font-size: 0.7em;
-	}
-
+	fill: currentColor;
 }
-
-
-
-

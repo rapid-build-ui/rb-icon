@@ -12,12 +12,6 @@ export class RbIcon extends PolymerElement {
 	constructor() {
 		super();
 		this.importPath = '/node_modules/@rapid-build-ui/rb-icon';
-		WebFont.load({
-			custom: {
-				families: ['FontAwesome', 'devicons'],
-				urls: [`${this.importPath}/styles/rb-icon.css`]
-			}
-		})
 	}
 
 	ready() {
@@ -29,6 +23,10 @@ export class RbIcon extends PolymerElement {
 	static get properties() {
 		return {
 			kind:	{
+				type: String,
+				value: ''
+			},
+			source:	{
 				type: String,
 				value: ''
 			},
@@ -48,16 +46,12 @@ export class RbIcon extends PolymerElement {
 		if (!kind) {
 			return '';
 		}
-		kind = kind.toLowerCase();
-
-		switch (true) {
-			case kind.indexOf('devicons')==0:
-				return `devicons ${kind}`
-				break;
-			default:
-				return `fa fa-${kind}`;
-		}
 	}
+
+	_isSrc(src) {
+		return this.source === src
+	}
+
 
 
 	/* Template
