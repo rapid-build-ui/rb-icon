@@ -27,7 +27,7 @@ export class RbIcon extends PolymerElement {
 			},
 			source:	{
 				type: String,
-				value: ''
+				value: 'regular'
 			},
 			size: {
 				type: String,
