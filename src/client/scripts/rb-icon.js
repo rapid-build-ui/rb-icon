@@ -10,7 +10,6 @@ export class RbIcon extends PolymerElement {
 	 ************/
 	constructor() {
 		super();
-		this.importPath = '/node_modules/@rapid-build-ui/rb-icon';
 	}
 
 	ready() {
@@ -27,7 +26,7 @@ export class RbIcon extends PolymerElement {
 			},
 			source:	{
 				type: String,
-				value: 'regular'
+				value: ''
 			},
 			size: {
 				type: String,

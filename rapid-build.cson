@@ -19,6 +19,10 @@ common:
 			]
 
 	inline:
+		htmlAssets:
+			dev: true
+			enable: true
+
 		jsHtmlImports:
 			client:
 				enable: true
