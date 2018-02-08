@@ -29,6 +29,7 @@
 	},
 	"flat": true,
 	"dependencies": {
+		"@fortawesome/fontawesome": "FortAwesome/Font-Awesome#v5.0.6",
 		"@polymer/polymer": "next"
 	}
 }
