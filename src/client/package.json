@@ -28,8 +28,10 @@
 		"url": "https://github.com/rapid-build-ui/rb-icon/issues"
 	},
 	"flat": true,
+	"devDependencies": {
+		"@fortawesome/fontawesome": "FortAwesome/Font-Awesome#v5.0.6"
+	},
 	"dependencies": {
-		"@fortawesome/fontawesome": "FortAwesome/Font-Awesome#v5.0.6",
 		"@polymer/polymer": "next"
 	}
 }
