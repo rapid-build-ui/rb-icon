@@ -21,36 +21,20 @@ export class RbIcon extends PolymerElement {
 	static get properties() {
 		return {
 			kind:	{
-				type: String,
-				value: ''
+				type: String
 			},
 			source:	{
 				type: String,
 				value: ''
-			},
-			size: {
-				type: String,
-				value: ''
-			},
-			bold: {
-				type: Boolean,
-				value: false
-
 			}
 		}
 	}
 
-	_iconKindMatched(kind) {
-		if (!kind) {
-			return '';
-		}
-	}
-
+	/* Computed Bindings
+	 ********************/
 	_isSrc(src) {
 		return this.source === src
 	}
-
-
 
 	/* Template
 	 ***********/
