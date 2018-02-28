@@ -23,16 +23,22 @@ export class RbIcon extends PolymerElement {
 			kind:	{
 				type: String
 			},
+			size: {
+				type: Number
+			},
 			source:	{
-				type: String,
-				value: ''
+				type: String
 			}
 		}
 	}
 
 	/* Computed Bindings
 	 ********************/
-	_isSrc(src) {
+	_size(size) { // :string
+		if (!size) return;
+ 		return `font-size: ${size}em;`
+ 	}
+	_src(src) { // :string
 		return this.source === src
 	}
 
