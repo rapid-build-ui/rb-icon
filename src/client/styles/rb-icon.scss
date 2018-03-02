@@ -1,9 +1,16 @@
 /*****************
  * RB-ICON STYLES
  *****************/
+// Sassy Goodness
+@import 'sass/functions.scss';
+@import 'sass/variables.scss';
+
+// The Component
 .rb-icon {
 	position: relative;
+	top: remy(-3);
 	fill: currentColor;
 	width: 1em;
 	height: 1em;
+	vertical-align: middle;
 }
