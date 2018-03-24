@@ -1,7 +1,7 @@
 /**********
  * RB-ICON
  **********/
-import { Element as PolymerElement } from '../../../@polymer/polymer/polymer-element.js';
+import { PolymerElement, html } from '../../../@polymer/polymer/polymer-element.js';
 import { DomIf as DomIf } from '../../../@polymer/polymer/lib/elements/dom-if.js';
 import template from '../views/rb-icon.html';
 
@@ -45,7 +45,7 @@ export class RbIcon extends PolymerElement {
 	/* Template
 	 ***********/
 	static get template() {
-		return template;
+		return html template;
 	}
 }
 
