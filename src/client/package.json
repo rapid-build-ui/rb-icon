@@ -34,7 +34,7 @@
 	},
 	"flat": true,
 	"devDependencies": {
-		"@fortawesome/fontawesome": "FortAwesome/Font-Awesome#v5.0.8"
+		"@fortawesome/fontawesome": "FortAwesome/Font-Awesome#v5.0.10"
 	},
 	"dependencies": {
 		"@polymer/polymer": "next"
