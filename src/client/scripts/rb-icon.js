@@ -12,10 +12,6 @@ export class RbIcon extends PolymerElement {
 		super();
 	}
 
-	ready() {
-		super.ready();
-	}
-
 	/* Properties
 	 ************/
 	static get properties() {
@@ -27,7 +23,8 @@ export class RbIcon extends PolymerElement {
 				type: Number
 			},
 			source:	{
-				type: String
+				type: String,
+				value: 'default'
 			}
 		}
 	}
@@ -35,11 +32,11 @@ export class RbIcon extends PolymerElement {
 	/* Computed Bindings
 	 ********************/
 	_size(size) { // :string
-		if (!size) return;
- 		return `font-size: ${size}em;`
- 	}
-	_src(src) { // :string
-		return this.source === src
+		return size ? `font-size: ${size}em;` : null;
+	}
+	_source(source, key) { // :boolean
+		if (!source && key === 'default') return true;
+		return source === key;
 	}
 
 	/* Template
