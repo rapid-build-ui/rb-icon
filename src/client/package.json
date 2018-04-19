@@ -1,6 +1,6 @@
 {
 	"name": "@rapid-build-ui/rb-icon",
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"main": "scripts/rb-icon.js",
 	"description": "Rapid Build UI Component: rb-icon",
 	"license": "MIT",
