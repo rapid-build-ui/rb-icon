@@ -1,7 +1,7 @@
 {
 	"name": "rb-icon-proj",
 	"version": "0.0.0",
-	"description": "Rapid Build UI - Component Project: rb-icon",
+	"description": "Rapid Build UI Web Component Project: rb-icon",
 	"license": "MIT",
 	"engines": {
 		"npm": "5.x",
