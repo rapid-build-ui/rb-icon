@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-"@fortawesome/fontawesome@FortAwesome/Font-Awesome#v5.0.10":
-  version "0.0.0"
-  resolved "https://codeload.github.com/FortAwesome/Font-Awesome/tar.gz/85f10f277c33a1d70891f1c8d793d5d9a69d5b3d"
-
 "@polymer/polymer@next":
   version "3.0.0-pre.12"
   resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.0-pre.12.tgz#3f5dd19099a194bf1066cf417ae13c335bd63b04"

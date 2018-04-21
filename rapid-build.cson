@@ -16,7 +16,6 @@ common:
 		copy:
 			client: [
 				'package.json'
-				'node_modules/@fortawesome/fontawesome/advanced-options/svg-sprites/**/*.svg'
 			]
 
 	inline:
