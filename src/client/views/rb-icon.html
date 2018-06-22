@@ -1,17 +1,17 @@
-<svg class$="rb-icon [[kind]]" style$="{{_size(size)}}">
-	<use href$="#[[kind]]"></use>
+<svg id="rb-icon" class="rb-icon" style$="{{_size(size)}}">
+	<path></path>
 </svg>
 
 <link rel="stylesheet" href="../styles/rb-icon.css">
 
 <template is="dom-if" if="{{_source(source, 'default')}}">
-	<img src="../libs/font-awesome/fa-regular.svg">
+	<img src="../libs/font-awesome/fa-regular.svg" id="default-icons">
 </template>
 
 <template is="dom-if" if="{{_source(source, 'solid')}}">
-	<img src="../libs/font-awesome/fa-solid.svg">
+	<img src="../libs/font-awesome/fa-solid.svg" id="solid-icons">
 </template>
 
 <template is="dom-if" if="{{_source(source, 'brands')}}">
-	<img src="../libs/font-awesome/fa-brands.svg">
+	<img src="../libs/font-awesome/fa-brands.svg" id="brands-icons">
 </template>
