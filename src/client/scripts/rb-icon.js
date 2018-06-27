@@ -44,7 +44,7 @@ export class RbIcon extends withComponent(withRenderer()) {
 
 	/* Template
 	 ***********/
-	render({ size, source }) {
+	render({ props }) {
 		return html template;
 	}
 }

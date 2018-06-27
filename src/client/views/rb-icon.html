@@ -1,12 +1,12 @@
 <svg
 	class="rb-icon"
-	style$="${size ? `font-size: ${size}em;`: ''}">
+	style$="${props.size ? `font-size: ${props.size}em;`: ''}">
 	<path></path>
 </svg>
 
-${source === 'solid'
+${props.source === 'solid'
 	? html`<img src="../libs/font-awesome/fa-solid.svg">`
-	: source === 'brands'
+	: props.source === 'brands'
 		? html`<img src="../libs/font-awesome/fa-brands.svg">`
 		: html`<img src="../libs/font-awesome/fa-regular.svg">`
 }
