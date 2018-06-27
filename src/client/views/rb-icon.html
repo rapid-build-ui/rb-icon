@@ -1,17 +1,14 @@
-<svg id="rb-icon" class="rb-icon" style$="{{_size(size)}}">
+<svg
+	class="rb-icon"
+	style$="${size ? `font-size: ${size}em;`: ''}">
 	<path></path>
 </svg>
 
+${source === 'solid'
+	? html`<img src="../libs/font-awesome/fa-solid.svg">`
+	: source === 'brands'
+		? html`<img src="../libs/font-awesome/fa-brands.svg">`
+		: html`<img src="../libs/font-awesome/fa-regular.svg">`
+}
+
 <link rel="stylesheet" href="../styles/rb-icon.css">
-
-<template is="dom-if" if="{{_source(source, 'default')}}">
-	<img src="../libs/font-awesome/fa-regular.svg" id="default-icons">
-</template>
-
-<template is="dom-if" if="{{_source(source, 'solid')}}">
-	<img src="../libs/font-awesome/fa-solid.svg" id="solid-icons">
-</template>
-
-<template is="dom-if" if="{{_source(source, 'brands')}}">
-	<img src="../libs/font-awesome/fa-brands.svg" id="brands-icons">
-</template>
