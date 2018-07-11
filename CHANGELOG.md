@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.4...v0.0.5) (2018-07-11)
+
+
+### Bug Fixes
+
+* **blinking:** fix icon from occasionally blinking on initial load ([1830f47](https://github.com/rapid-build-ui/rb-icon/commit/1830f47))
+
+
+
 ## [0.0.4](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.3...v0.0.4) (2018-07-08)
 
 
