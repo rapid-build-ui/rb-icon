@@ -1,11 +1,10 @@
 /**********
  * RB-ICON
  **********/
-import { props, withComponent } from '../../../skatejs/dist/esnext/index.js';
-import { html, withRenderer } from './renderer.js';
+import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
 import template from '../views/rb-icon.html';
 
-export class RbIcon extends withComponent(withRenderer()) {
+export class RbIcon extends RbBase() {
 	/* Properties
 	 ************/
 	static get props() {
@@ -21,6 +20,7 @@ export class RbIcon extends withComponent(withRenderer()) {
 	/* Lifecycle
 	 ************/
 	viewReady() {
+		super.viewReady && super.viewReady();
 		let spriteSvg    = null;
 		let spritePath   = null;
 		const activeSvg  = this.shadowRoot.querySelector('.rb-icon');
