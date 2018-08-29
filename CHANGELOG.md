@@ -1,3 +1,17 @@
+## [0.0.6](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.5...v0.0.6) (2018-08-29)
+
+
+### Features
+
+* **bump:** dep font-awesome icons to v5.3.1 from v5.2.0 ([e3a7e3d](https://github.com/rapid-build-ui/rb-icon/commit/e3a7e3d))
+
+
+### Dependency Updates
+
+* **rb-base:** replace deps lit-html and skatejs with @rapid-build-ui/rb-base and make corresponding updates ([2504129](https://github.com/rapid-build-ui/rb-icon/commit/2504129))
+
+
+
 ## [0.0.5](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.4...v0.0.5) (2018-07-11)
 
 
