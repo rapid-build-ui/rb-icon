@@ -5,9 +5,24 @@ import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
 import template from '../views/rb-icon.html';
 
 export class RbIcon extends RbBase() {
-	/* Properties
+	/* Lifecycle
 	 ************/
-	static get props() {
+	viewReady() { // :void
+		super.viewReady && super.viewReady();
+		this.rb.elms.rbSvg  = this.shadowRoot.querySelector('.rb-icon');
+		this.rb.elms.rbPath = this.rb.elms.rbSvg.querySelector('path');
+		this._updateIcon();
+	}
+	updated(prevProps, prevState) { // :void (runs before viewReady())
+		if (super.updated) super.updated(prevProps, prevState);
+		if (!this.rb.view.isReady) return;
+		if (prevProps.kind === this.kind && prevProps.source === this.source) return;
+		this._updateIcon(); // runs after view updated (required)
+	}
+
+	/* Properties
+	 *************/
+	static get props() { // :object
 		return {
 			kind: props.string,
 			size: props.number,
@@ -17,32 +32,32 @@ export class RbIcon extends RbBase() {
 		};
 	}
 
-	/* Lifecycle
-	 ************/
-	viewReady() {
-		super.viewReady && super.viewReady();
-		let spriteSvg    = null;
-		let spritePath   = null;
-		const activeSvg  = this.shadowRoot.querySelector('.rb-icon');
-		const activePath = activeSvg.querySelector('path');
-		try { // incase of invalid css selector
-			spriteSvg = this.shadowRoot.querySelector(`#${this.props.kind}`);
-		} catch {}
-		if (!spriteSvg) {
-			activeSvg.classList.add('hide');
-			activeSvg.removeAttribute('viewBox');
-			activePath.removeAttribute('d');
+	/* Helpers
+	 **********/
+	_updateIcon() { // :void
+		let libSvg, libPath;
+		const { rbSvg, rbPath } = this.rb.elms;
+		// try/catch incase of invalid css selector
+		try {
+			libSvg = this.shadowRoot.querySelector(`#${this.kind}`);
+		} catch(e) {}
+		// hide icon so it doesn't take up space
+		if (!libSvg) {
+			rbSvg.classList.add('hide');
+			rbSvg.removeAttribute('viewBox');
+			rbPath.removeAttribute('d');
 			return;
 		}
-		activeSvg.classList.remove('hide')
-		spritePath = spriteSvg.querySelector('path');
-		activeSvg.setAttribute('viewBox', spriteSvg.getAttribute('viewBox'));
-		activePath.setAttribute('d', spritePath.getAttribute('d'));
+		// all good, update icon
+		libPath = libSvg.querySelector('path');
+		rbSvg.classList.remove('hide');
+		rbSvg.setAttribute('viewBox', libSvg.getAttribute('viewBox'));
+		rbPath.setAttribute('d', libPath.getAttribute('d'));
 	}
 
 	/* Template
 	 ***********/
-	render({ props }) {
+	render({ props }) { // :string
 		return html template;
 	}
 }
