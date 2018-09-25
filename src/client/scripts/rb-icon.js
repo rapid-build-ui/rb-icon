@@ -26,6 +26,7 @@ export class RbIcon extends RbBase() {
 		return {
 			kind: props.string,
 			size: props.number,
+			vAlign: props.string,
 			source: Object.assign({}, props.string, {
 				default: 'default'
 			})
