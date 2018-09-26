@@ -1,7 +1,26 @@
+## [0.0.9](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.8...v0.0.9) (2018-09-26)
+
+
+### Bug Fixes
+
+* **api options:** kind and source when dynamically setting ([0833d9e](https://github.com/rapid-build-ui/rb-icon/commit/0833d9e))
+
+
+### Features
+
+* **new api option:** vertical, for vertically aligning the icon ([a4ddabe](https://github.com/rapid-build-ui/rb-icon/commit/a4ddabe))
+
+
+### Dependencies
+
+* **bump:** dep rb-base v0.0.4 ([48d5720](https://github.com/rapid-build-ui/rb-icon/commit/48d5720))
+
+
+
 ## [0.0.8](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.7...v0.0.8) (2018-09-14)
 
 
-### Dependency Updates
+### Dependencies
 
 * **rb-base:** bump to v0.0.3 ([8c87fd2](https://github.com/rapid-build-ui/rb-icon/commit/8c87fd2))
 
@@ -10,7 +29,7 @@
 ## [0.0.7](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.6...v0.0.7) (2018-09-05)
 
 
-### Dependency Updates
+### Dependencies
 
 * **rb-base:** bump to v0.0.2 ([ae60649](https://github.com/rapid-build-ui/rb-icon/commit/ae60649))
 
@@ -24,7 +43,7 @@
 * **bump:** dep font-awesome icons to v5.3.1 from v5.2.0 ([e3a7e3d](https://github.com/rapid-build-ui/rb-icon/commit/e3a7e3d))
 
 
-### Dependency Updates
+### Dependencies
 
 * **rb-base:** replace deps lit-html and skatejs with @rapid-build-ui/rb-base and make corresponding updates ([2504129](https://github.com/rapid-build-ui/rb-icon/commit/2504129))
 
