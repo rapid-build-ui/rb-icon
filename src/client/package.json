@@ -5,7 +5,7 @@
   "description": "Rapid Build UI Web Component: rb-icon",
   "license": "MIT",
   "engines": {
-    "node": "8.x",
+    "node": "10.x",
     "npm": "6.x"
   },
   "publishConfig": {
@@ -37,6 +37,6 @@
   },
   "flat": true,
   "dependencies": {
-    "@rapid-build-ui/rb-base": "^0.0.4"
+    "@rapid-build-ui/rb-base": "^0.0.5"
   }
 }
