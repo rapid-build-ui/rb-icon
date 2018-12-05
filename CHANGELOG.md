@@ -1,3 +1,18 @@
+## [0.0.11](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.10...v0.0.11) (2018-12-05)
+
+
+### Features
+
+* **bump:** dep rb-base v0.0.6 ([c54ee21](https://github.com/rapid-build-ui/rb-icon/commit/c54ee21))
+* **hidden attribute:** display style that respects the hidden attribute ([5c07381](https://github.com/rapid-build-ui/rb-icon/commit/5c07381))
+
+
+### Performance Improvements
+
+* **css:** improve browser performance by adding css contain property ([7da3d99](https://github.com/rapid-build-ui/rb-icon/commit/7da3d99))
+
+
+
 ## [0.0.10](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.9...v0.0.10) (2018-11-13)
 
 
