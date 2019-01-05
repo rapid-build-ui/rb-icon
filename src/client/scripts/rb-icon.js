@@ -1,8 +1,8 @@
 /**********
  * RB-ICON
  **********/
-import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
-import template from '../views/rb-icon.html';
+import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
+import template                from '../views/rb-icon.html';
 
 export class RbIcon extends RbBase() {
 	/* Lifecycle
