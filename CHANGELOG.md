@@ -1,3 +1,31 @@
+## [0.0.12](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.11...v0.0.12) (2019-02-24)
+
+
+### Features
+
+* **bump:** dep font-awesome icons v5.7.2 ([cce7377](https://github.com/rapid-build-ui/rb-icon/commit/cce7377))
+* **styling:** set host to inline-block so consumers can add top or bottom bumpers if necessary ([1bfb5c1](https://github.com/rapid-build-ui/rb-icon/commit/1bfb5c1))
+
+
+### Dependencies
+
+* **bump:** dep rb-base v0.0.7 ([855c81b](https://github.com/rapid-build-ui/rb-icon/commit/855c81b))
+
+
+### BREAKING CHANGES
+
+* **api:** change vertical to valign ([e864a81](https://github.com/rapid-build-ui/rb-icon/commit/e864a81))
+
+To migrate the code follow the example below:
+
+**Before:**  
+vertical="top"
+
+**Now:**  
+valign="top"
+
+
+
 ## [0.0.11](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.10...v0.0.11) (2018-12-05)
 
 
