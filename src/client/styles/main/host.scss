@@ -2,7 +2,8 @@
  * HOST
  *******/
 :host {
-	contain: content;
+	contain: paint style; // layout causes vertical alignment issue in chrome v71.0.3+
+	display: inline-block;
 }
 :host([hidden]) {
 	display: none;
