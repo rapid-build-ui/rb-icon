@@ -27,6 +27,9 @@ export class RbIcon extends RbBase() {
 			kind: props.string,
 			size: props.number,
 			valign: props.string,
+			library: Object.assign({}, props.string, {
+				default: 'fa'
+			}),
 			source: Object.assign({}, props.string, {
 				default: 'regular'
 			})
@@ -37,7 +40,8 @@ export class RbIcon extends RbBase() {
 	 ***********/
 	updating(prevProps, prevState) { // :void (runs before render() and viewReady())
 		if (prevProps.kind === this.kind &&
-			prevProps.source === this.source) return;
+			prevProps.source === this.source &&
+			prevProps.library === this.library) return;
 		this.__updateIcon();
 	}
 
@@ -56,13 +60,18 @@ export class RbIcon extends RbBase() {
 	}
 
 	__updateIcon() { // :void
-		this.kind   = this.kind.trim().toLowerCase();
-		this.source = this.source.trim().toLowerCase();
+		this.kind    = this.kind.trim().toLowerCase();
+		this.source  = this.source.trim().toLowerCase();
+		this.library = this.library.trim().toLowerCase();
 
 		if (!this.kind) return this.__hideIcon();
-		if (FA_SOURCES.indexOf(this.source) === -1) this.source = 'regular';
+		if (this.library === 'fa' && FA_SOURCES.indexOf(this.source) === -1)
+			this.source = 'regular';
 
-		const icons = Icons.fa[this.source];
+		const lib = Icons[this.library];
+		if (!lib) return this.__hideIcon();
+
+		const icons = lib[this.source];
 		if (!icons) return this.__hideIcon();
 
 		const icon = icons[this.kind];
