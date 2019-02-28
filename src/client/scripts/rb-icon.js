@@ -2,22 +2,22 @@
  * RB-ICON
  **********/
 import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
+import view                    from '../../rb-base/scripts/public/view/directives.js';
+import Icons                   from './icons.js';
 import template                from '../views/rb-icon.html';
+const FA_SOURCES = Object.keys(Icons.fa);
 
 export class RbIcon extends RbBase() {
 	/* Lifecycle
 	 ************/
-	viewReady() { // :void
-		super.viewReady && super.viewReady();
-		this.rb.elms.rbSvg  = this.shadowRoot.querySelector('.rb-icon');
-		this.rb.elms.rbPath = this.rb.elms.rbSvg.querySelector('path');
-		this._updateIcon();
-	}
-	updated(prevProps, prevState) { // :void (runs before viewReady())
-		if (super.updated) super.updated(prevProps, prevState);
-		if (!this.rb.view.isReady) return;
-		if (prevProps.kind === this.kind && prevProps.source === this.source) return;
-		this._updateIcon(); // runs after view updated (required)
+	constructor() {
+		super();
+		this.state = {
+			...super.state,
+			hide: false,
+			d: undefined,
+			viewBox: undefined
+		};
 	}
 
 	/* Properties
@@ -28,37 +28,53 @@ export class RbIcon extends RbBase() {
 			size: props.number,
 			valign: props.string,
 			source: Object.assign({}, props.string, {
-				default: 'default'
+				default: 'regular'
 			})
 		};
 	}
 
+	/* Observer
+	 ***********/
+	updating(prevProps, prevState) { // :void (runs before render() and viewReady())
+		if (prevProps.kind === this.kind &&
+			prevProps.source === this.source) return;
+		this.__updateIcon();
+	}
+
 	/* Helpers
 	 **********/
-	_updateIcon() { // :void
-		let libSvg, libPath;
-		const { rbSvg, rbPath } = this.rb.elms;
-		// try/catch incase of invalid css selector
-		try {
-			libSvg = this.shadowRoot.querySelector(`#${this.kind}`);
-		} catch(e) {}
-		// hide icon so it doesn't take up space
-		if (!libSvg) {
-			rbSvg.classList.add('hide');
-			rbSvg.removeAttribute('viewBox');
-			rbPath.removeAttribute('d');
-			return;
-		}
-		// all good, update icon
-		libPath = libSvg.querySelector('path');
-		rbSvg.classList.remove('hide');
-		rbSvg.setAttribute('viewBox', libSvg.getAttribute('viewBox'));
-		rbPath.setAttribute('d', libPath.getAttribute('d'));
+	__hideIcon() { // :void
+		this.state.hide    = true;
+		this.state.d       = undefined;
+		this.state.viewBox = undefined;
+	}
+
+	__showIcon(icon) { // :void
+		this.state.hide    = false;
+		this.state.d       = icon.d;
+		this.state.viewBox = icon.viewBox;
+	}
+
+	__updateIcon() { // :void
+		this.kind   = this.kind.trim().toLowerCase();
+		this.source = this.source.trim().toLowerCase();
+
+		if (!this.kind) return this.__hideIcon();
+		if (FA_SOURCES.indexOf(this.source) === -1) this.source = 'regular';
+
+		const icons = Icons.fa[this.source];
+		if (!icons) return this.__hideIcon();
+
+		const icon = icons[this.kind];
+		if (!icon) return this.__hideIcon();
+
+		// all good show icon
+		this.__showIcon(icon);
 	}
 
 	/* Template
 	 ***********/
-	render({ props }) { // :string
+	render({ props, state }) { // :string
 		return html template;
 	}
 }
