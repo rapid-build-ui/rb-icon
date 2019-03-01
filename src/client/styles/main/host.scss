@@ -2,7 +2,9 @@
  * HOST
  *******/
 :host {
-	contain: paint style; // layout causes vertical alignment issue in chrome v71.0.3+
+	// paint cuts off large icon when spinning
+	// layout causes vertical alignment issue in chrome v71.0.3+
+	contain: style;
 	display: inline-block;
 }
 :host([hidden]) {

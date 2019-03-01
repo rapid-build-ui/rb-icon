@@ -3,11 +3,5 @@
  *****************/
 @import 'sass/functions.scss';
 @import 'main/host.scss';
-
-// The Component
-svg {
-	fill: currentColor;
-	width: 1em;
-	height: 1em;
-	vertical-align: baseline;
-}
+@import 'main/common.scss';
+@import 'main/animation.scss';

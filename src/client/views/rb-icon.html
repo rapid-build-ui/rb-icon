@@ -2,8 +2,14 @@
 	style="${view.styleMap({
 		display: state.hide ? 'none' : null,
 		fontSize: props.size ? `${props.size}em` : null,
-		verticalAlign: props.valign,
+		animationDuration: props.speed ? `${props.speed}s` : null,
+		verticalAlign: props.valign
 	})}"
+	class="
+		${props.spin ? 'spin' : ''}
+		${props.burst ? 'burst' : ''}
+		${props.pulse ? 'pulse' : ''}
+	"
 	viewBox="${view.ifDefined(state.viewBox)}">
 	<path d="${view.ifDefined(state.d)}"></path>
 </svg>

@@ -7,6 +7,21 @@ import Icons                   from './icons.js';
 import template                from '../views/rb-icon.html';
 const FA_SOURCES = Object.keys(Icons.fa);
 
+/* Deserializers
+ ****************/
+const Deserialize = {
+	valueless(val) { // :boolean
+		if (typeof val !== 'string') return val;
+		val = val.trim();
+		if (!val) val = true; // :valueless
+		if (/^(?:true|false)$/i.test(val)) // :boolean
+			val = /^true$/i.test(val);
+		return val;
+	}
+}
+
+/* Component
+ ************/
 export class RbIcon extends RbBase() {
 	/* Lifecycle
 	 ************/
@@ -24,14 +39,26 @@ export class RbIcon extends RbBase() {
 	 *************/
 	static get props() { // :object
 		return {
+			flip: props.string,
 			kind: props.string,
 			size: props.number,
+			speed: props.number,
+			rotate: props.number,
 			valign: props.string,
 			library: Object.assign({}, props.string, {
 				default: 'fa'
 			}),
 			source: Object.assign({}, props.string, {
 				default: 'regular'
+			}),
+			burst: Object.assign({}, props.any, { // :valueless | boolean
+				deserialize: Deserialize.valueless
+			}),
+			pulse: Object.assign({}, props.any, { // :valueless | boolean
+				deserialize: Deserialize.valueless
+			}),
+			spin: Object.assign({}, props.any, { // :valueless | boolean
+				deserialize: Deserialize.valueless
 			})
 		};
 	}
@@ -39,9 +66,18 @@ export class RbIcon extends RbBase() {
 	/* Observer
 	 ***********/
 	updating(prevProps, prevState) { // :void (runs before render() and viewReady())
+		if ((typeof prevProps.flip === 'undefined' && this.flip) ||
+			(typeof prevProps.flip !== 'undefined' && prevProps.flip !== this.flip))
+			this.__flipIcon();
+
+		if ((typeof prevProps.rotate === 'undefined' && this.rotate) ||
+			(typeof prevProps.rotate !== 'undefined' && prevProps.rotate !== this.rotate))
+			this.__rotateIcon();
+
 		if (prevProps.kind === this.kind &&
 			prevProps.source === this.source &&
 			prevProps.library === this.library) return;
+
 		this.__updateIcon();
 	}
 
@@ -57,6 +93,24 @@ export class RbIcon extends RbBase() {
 		this.state.hide    = false;
 		this.state.d       = icon.d;
 		this.state.viewBox = icon.viewBox;
+	}
+
+	__flipIcon() { // :void (must rotate host to not mess up svg animations)
+		let flip = this.flip.trim().toLowerCase();
+		flip = flip === 'horizontal' ? '-1, 1'  :
+			   flip === 'vertical'   ? '1, -1'  :
+			   flip === 'both'       ? '-1, -1' :
+			   null;
+		this.__flip = flip ? `scale(${flip})` : flip;
+		if (!this.__flip) return;
+		const rotate = this.__rotate || '';
+		this.style.transform = `${this.__flip} ${rotate}`;
+	}
+
+	__rotateIcon() { // :void (must rotate host to not mess up svg animations)
+		const flip = this.__flip || '';
+		this.__rotate = `rotate(${this.rotate}deg)`;
+		this.style.transform = `${this.__rotate} ${flip}`;
 	}
 
 	__updateIcon() { // :void
