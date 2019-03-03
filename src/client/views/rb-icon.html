@@ -1,5 +1,5 @@
 <svg
-	style="${view.styleMap({
+	style="${View.styleMap({
 		display: state.hide ? 'none' : null,
 		fontSize: props.size ? `${props.size}em` : null,
 		animationDuration: props.speed ? `${props.speed}s` : null,
@@ -10,8 +10,8 @@
 		${props.burst ? 'burst' : ''}
 		${props.pulse ? 'pulse' : ''}
 	"
-	viewBox="${view.ifDefined(state.viewBox)}">
-	<path d="${view.ifDefined(state.d)}"></path>
+	viewBox="${View.ifDefined(state.viewBox)}">
+	<path d="${View.ifDefined(state.d)}"></path>
 </svg>
 
 <link rel="stylesheet" href="../styles/rb-icon.css">

@@ -2,23 +2,11 @@
  * RB-ICON
  **********/
 import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
-import view                    from '../../rb-base/scripts/public/view/directives.js';
+import Converter               from '../../rb-base/scripts/public/props/converters.js';
+import View                    from '../../rb-base/scripts/public/view/directives.js';
 import Icons                   from './icons.js';
 import template                from '../views/rb-icon.html';
 const FA_SOURCES = Object.keys(Icons.fa);
-
-/* Deserializers
- ****************/
-const Deserialize = {
-	valueless(val) { // :boolean
-		if (typeof val !== 'string') return val;
-		val = val.trim();
-		if (!val) val = true; // :valueless
-		if (/^(?:true|false)$/i.test(val)) // :boolean
-			val = /^true$/i.test(val);
-		return val;
-	}
-}
 
 /* Component
  ************/
@@ -51,14 +39,14 @@ export class RbIcon extends RbBase() {
 			source: Object.assign({}, props.string, {
 				default: 'regular'
 			}),
-			burst: Object.assign({}, props.any, { // :valueless | boolean
-				deserialize: Deserialize.valueless
+			burst: Object.assign({}, props.boolean, {
+				deserialize: Converter.valueless
 			}),
-			pulse: Object.assign({}, props.any, { // :valueless | boolean
-				deserialize: Deserialize.valueless
+			pulse: Object.assign({}, props.boolean, {
+				deserialize: Converter.valueless
 			}),
-			spin: Object.assign({}, props.any, { // :valueless | boolean
-				deserialize: Deserialize.valueless
+			spin: Object.assign({}, props.boolean, {
+				deserialize: Converter.valueless
 			})
 		};
 	}
