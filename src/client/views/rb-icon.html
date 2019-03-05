@@ -1,17 +1,17 @@
 <svg
-	class="rb-icon"
-	style="
-		${props.size ? `font-size: ${props.size}em;`: ''}
-		${props.valign ? `vertical-align: ${props.valign};`: ''}
-	">
-	<path></path>
+	style="${View.styleMap({
+		display: state.hide ? 'none' : null,
+		fontSize: props.size ? `${props.size}em` : null,
+		animationDuration: props.speed ? `${props.speed}s` : null,
+		verticalAlign: props.valign
+	})}"
+	class="
+		${props.spin ? 'spin' : ''}
+		${props.burst ? 'burst' : ''}
+		${props.pulse ? 'pulse' : ''}
+	"
+	viewBox="${View.ifDefined(state.viewBox)}">
+	<path d="${View.ifDefined(state.d)}"></path>
 </svg>
-
-${props.source === 'solid'
-	? html`<img src="../libs/font-awesome/fa-solid.svg">`
-	: props.source === 'brands'
-		? html`<img src="../libs/font-awesome/fa-brands.svg">`
-		: html`<img src="../libs/font-awesome/fa-regular.svg">`
-}
 
 <link rel="stylesheet" href="../styles/rb-icon.css">

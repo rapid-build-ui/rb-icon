@@ -1,0 +1,77 @@
+/************
+ * ANIMATION
+ ************/
+// When animating inside other components start delay needed for safari:
+// iOS: 150ms
+// macOS: 50ms
+$animate: 2s linear 150ms infinite;
+.burst { animation: burst $animate; }
+.pulse { animation: pulse $animate; }
+.spin  { animation: spin  $animate; }
+
+.burst.pulse { animation: burst-pulse $animate; }
+.burst.spin  { animation: burst-spin  $animate; }
+.pulse.spin  { animation: pulse-spin  $animate; }
+.burst.pulse.spin { animation: burst-pulse-spin $animate; }
+
+/* Maps
+ *******/
+$burst: (
+	0:   ( opac: .6 ),
+	50:  ( opac: 0, trans: scale(1.8) ),
+	100: ( opac: 0 )
+);
+$pulse: (
+	0:   ( trans: scale(1.1) ),
+	50:  ( trans: scale(0.8) ),
+	100: ( trans: scale(1.1) )
+);
+$spin: (
+	0:   ( trans: rotate(0deg) ),
+	50:  ( trans: rotate(180deg) ),
+	100: ( trans: rotate(360deg) )
+);
+
+/* Single Animation
+ *******************/
+@keyframes burst {
+	0%   { opacity: mapGet($burst, 0, opac); }
+	50%  { opacity: mapGet($burst, 50, opac); transform: mapGet($burst, 50, trans); }
+	100% { opacity: mapGet($burst, 100, opac); }
+}
+
+@keyframes pulse {
+	0%   { transform: mapGet($pulse, 0, trans); }
+	50%  { transform: mapGet($pulse, 50, trans); }
+	100% { transform: mapGet($pulse, 100, trans); }
+}
+
+@keyframes spin {
+	0%   { transform: mapGet($spin, 0, trans); }
+	50%  { transform: mapGet($spin, 50, trans); }
+	100% { transform: mapGet($spin, 100, trans); }
+}
+
+/* Multi Animation
+ ******************/
+@keyframes burst-pulse {
+	0%   { opacity: 1; transform: mapGet($pulse, 0,   trans); }
+	50%  { opacity: 0; transform: mapGet($pulse, 50,  trans); }
+	100% { opacity: 1; transform: mapGet($pulse, 100, trans); }
+}
+@keyframes burst-spin {
+	0%   { opacity: 0;  transform: mapGet($spin, 0,   trans) mapGet($burst, 50, trans); }
+	50%  { opacity: .6; transform: mapGet($spin, 50,  trans) scale(.8); }
+	100% { opacity: 0;  transform: mapGet($spin, 100, trans) mapGet($burst, 50, trans); }
+}
+@keyframes burst-pulse-spin {
+	0%   { opacity: 1;  transform: mapGet($spin, 0,   trans) mapGet($pulse, 0,   trans); }
+	50%  { opacity: 0; transform: mapGet($spin, 50,  trans) mapGet($pulse, 50,  trans); }
+	100% { opacity: 1;  transform: mapGet($spin, 100, trans) mapGet($pulse, 100, trans); }
+}
+
+@keyframes pulse-spin {
+	0%   { transform: mapGet($spin, 0, trans)   mapGet($pulse, 0, trans); }
+	50%  { transform: mapGet($spin, 50, trans)  mapGet($pulse, 50, trans); }
+	100% { transform: mapGet($spin, 100, trans) mapGet($pulse, 100, trans); }
+}

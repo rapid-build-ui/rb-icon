@@ -3,15 +3,5 @@
  *****************/
 @import 'sass/functions.scss';
 @import 'main/host.scss';
-
-// The Component
-.rb-icon {
-	fill: currentColor;
-	width: 1em;
-	height: 1em;
-	vertical-align: baseline;
-}
-
-.hide {
-	display: none;
-}
+@import 'main/common.scss';
+@import 'main/animation.scss';
