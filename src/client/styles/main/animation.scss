@@ -1,7 +1,10 @@
 /************
  * ANIMATION
  ************/
-$animate: 2s linear infinite;
+// When animating inside other components start delay needed for safari:
+// iOS: 150ms
+// macOS: 50ms
+$animate: 2s linear 150ms infinite;
 .burst { animation: burst $animate; }
 .pulse { animation: pulse $animate; }
 .spin  { animation: spin  $animate; }
