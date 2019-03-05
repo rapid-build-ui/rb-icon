@@ -1,3 +1,22 @@
+## [0.0.13](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.12...v0.0.13) (2019-03-05)
+
+
+### Features
+
+* **animation:** create and add it ([3917938](https://github.com/rapid-build-ui/rb-icon/commit/3917938))
+
+
+### Performance Improvements
+
+* **🚀 major performance boost:** populate the svg via an icons map and remove the inlined svgs from the view ([fabf049](https://github.com/rapid-build-ui/rb-icon/commit/fabf049))
+
+
+### Dependencies
+
+* **bump:** dep rb-base v0.0.8 ([9ce6657](https://github.com/rapid-build-ui/rb-icon/commit/9ce6657))
+
+
+
 ## [0.0.12](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.11...v0.0.12) (2019-02-24)
 
 
