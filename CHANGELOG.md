@@ -1,3 +1,17 @@
+## [0.0.14](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.13...v0.0.14) (2019-05-09)
+
+
+### Features
+
+* **bump:** dep font-awesome icons v5.8.2 ([41613ad](https://github.com/rapid-build-ui/rb-icon/commit/41613ad))
+
+
+### Dependencies
+
+* **bump:** dep rb-base v0.0.9 ([1f86fae](https://github.com/rapid-build-ui/rb-icon/commit/1f86fae))
+
+
+
 ## [0.0.13](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.12...v0.0.13) (2019-03-05)
 
 
