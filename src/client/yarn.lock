@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@rapid-build-ui/rb-base@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-base/-/rb-base-0.0.8.tgz#cc6cd36768f3b8297c58656790d642bc19722693"
-  integrity sha512-v3mlKlgq9Gq67ChotflRDtDUwAQj7SlEUiuLz9MIjBgsW5ZjBVKd9djQau/BGTj2uLH1ppHskfQaIXHodK7tGA==
+"@rapid-build-ui/rb-base@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-base/-/rb-base-0.0.9.tgz#5922cc02a82b3301a7506e2773c717ce75c6e6a0"
+  integrity sha512-sMJ5opgKAIg88EYkptQ9+V6rFnVih1hhOxNyHIFQAxdqVP+hWMK1hAoimoPpGFqyEjWZy8HTWTDsqLsD5mr83w==
   dependencies:
     lit-html "^1.0.0"
     skatejs "^5.2.4"
