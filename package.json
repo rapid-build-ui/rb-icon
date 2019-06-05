@@ -5,7 +5,7 @@
     "build-continuous": "node node_modules/@rapid-build-ui/utils/ci component continuous",
     "build-release": "node node_modules/@rapid-build-ui/utils/ci component release",
     "bump": "node node_modules/@rapid-build-ui/utils/bump component patch",
-    "create-icons": "node scripts/create-icons",
+    "build-icons": "node scripts/create-icons",
     "link": "cd dist/client/ && yarn link",
     "unlink": "cd dist/client/ && yarn unlink",
     "relink": "npm run link && npm run unlink && npm run link",
