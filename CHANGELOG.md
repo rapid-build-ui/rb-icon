@@ -1,3 +1,18 @@
+## [0.0.15](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.14...v0.0.15) (2019-07-05)
+
+
+### Features
+
+* **version:** add to component properties accessible via this.version ([10625c0](https://github.com/rapid-build-ui/rb-icon/commit/10625c0))
+
+
+### Dependencies
+
+* **bump:** dep font-awesome icons v5.9.0 ([86249c9](https://github.com/rapid-build-ui/rb-icon/commit/86249c9))
+* **bump:** dep rb-base v0.0.10 ([e263d00](https://github.com/rapid-build-ui/rb-icon/commit/e263d00))
+
+
+
 ## [0.0.14](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.13...v0.0.14) (2019-05-09)
 
 
