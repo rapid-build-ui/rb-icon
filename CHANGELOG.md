@@ -1,3 +1,12 @@
+## [0.0.16](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.15...v0.0.16) (2019-07-12)
+
+
+### Dependencies
+
+* **bump:** dep base v0.0.11
+
+
+
 ## [0.0.15](https://github.com/rapid-build-ui/rb-icon/compare/v0.0.14...v0.0.15) (2019-07-05)
 
 

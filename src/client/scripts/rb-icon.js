@@ -15,7 +15,7 @@ export class RbIcon extends RbBase() {
 	 ************/
 	constructor() {
 		super();
-		this.version = '0.0.15';
+		this.version = '0.0.16';
 		this.state = {
 			...super.state,
 			hide: false,
