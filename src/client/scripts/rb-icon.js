@@ -4,7 +4,7 @@
 import { RbBase, props, html } from '../../base/scripts/base.js';
 import Converter               from '../../base/scripts/public/props/converters.js';
 import View                    from '../../base/scripts/public/view/directives.js';
-import Icons                   from './icons.js';
+import Icons                   from './generated/icons.js';
 import template                from '../views/rb-icon.html';
 const FA_SOURCES = Object.keys(Icons.fa);
 
